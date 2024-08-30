@@ -9,14 +9,12 @@ F6 = dropBeeper();
 
 void walkTheLabyrinth()
 {
-    repeat(75)
+    while (!onBeeper())
     {
         movingForward();
     }
-    
-    
-    
 }
+
 void movingForward()
 {
     while (frontIsClear())
@@ -24,10 +22,9 @@ void movingForward()
         moveForward();
     }
     turnLeft();
-    while(!frontIsClear())
+    while (!frontIsClear())
     {
         turnRight();
+        //moveForward();
     }
-    
 }
-
